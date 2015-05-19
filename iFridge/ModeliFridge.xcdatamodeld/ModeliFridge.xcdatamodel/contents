@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14B25" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Fridge" representedClassName="Fridge" syncable="YES">
+        <attribute name="dateOfExp" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="listOfProducts" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="fromWhatToMake" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Recipes" inverseName="howToMake" inverseEntity="Recipes" syncable="YES"/>
+    </entity>
+    <entity name="Recipes" representedClassName="Recipes" syncable="YES">
+        <attribute name="imageOfProduct" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="instructutionOfUsage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="listOfProducts" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="howToMake" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Fridge" inverseName="fromWhatToMake" inverseEntity="Fridge" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Fridge" positionX="-362" positionY="-3907" width="128" height="88"/>
+        <element name="Recipes" positionX="-560" positionY="-3832" width="128" height="103"/>
+    </elements>
+</model>
