@@ -35,17 +35,6 @@ static NSString * const kClientID = @"479226462698-nuoqkaoi6c79be4ghh4he3ov05bb1
                      kGTLAuthScopePlusLogin,nil];
     signIn.delegate = self;
     
-    NSArray* vkPermissions = [NSArray arrayWithObjects: @"photos", @"friends", @"wall", @"audio", @"video", @"docs", @"notes", @"pages",
-                        @"status", @"groups", @"messages",nil];
-    
-    
-//    [VKSdk initializeWithDelegate:self andAppId:vkAppID ];
-//    if ([VKSdk wakeUpSession])
-//    {
-//       [VKSdk authorize:vkPermissions revokeAccess:YES];
-//        
-//    }
-    
     FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
     
     loginButton.frame = CGRectMake(34, 611, 306, 46);
