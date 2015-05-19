@@ -2,18 +2,17 @@
 //  Fridge.m
 //  iFridge
 //
-//  Created by Alexey Pelekh on 5/12/15.
+//  Created by Vladius on 5/18/15.
 //  Copyright (c) 2015 Alexey Pelekh. All rights reserved.
 //
 
 #import "Fridge.h"
-#import "Recipes.h"
+#import "Ingredient.h"
 
 
 @implementation Fridge
 
-@dynamic listOfProducts;
-@dynamic dateOfExp;
-@dynamic fromWhatToMake;
+@dynamic name;
+@dynamic ingredient;
 
 @end
