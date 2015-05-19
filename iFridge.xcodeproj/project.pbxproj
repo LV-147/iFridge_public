@@ -41,15 +41,15 @@
 		35A9D70F1B08F1B7005EF9BF /* GoogleOpenSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A9D70C1B08F1B7005EF9BF /* GoogleOpenSource.framework */; };
 		35A9D7101B08F1B7005EF9BF /* GooglePlus.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 35A9D70D1B08F1B7005EF9BF /* GooglePlus.bundle */; };
 		35A9D7111B08F1B7005EF9BF /* GooglePlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A9D70E1B08F1B7005EF9BF /* GooglePlus.framework */; };
-		D992EE1A1B0A315E0093B3F7 /* iFridge.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = D992EE111B0A315E0093B3F7 /* iFridge.xcdatamodel */; };
-		D992EE1C1B0A315E0093B3F7 /* Recipe+Cat.m in Sources */ = {isa = PBXBuildFile; fileRef = D992EE151B0A315E0093B3F7 /* Recipe+Cat.m */; };
-		D992EE1E1B0A315E0093B3F7 /* Ingredient+Cat.m in Sources */ = {isa = PBXBuildFile; fileRef = D992EE191B0A315E0093B3F7 /* Ingredient+Cat.m */; };
 		D992EE2A1B0A339A0093B3F7 /* Fridge.m in Sources */ = {isa = PBXBuildFile; fileRef = D992EE291B0A339A0093B3F7 /* Fridge.m */; };
 		D992EE2D1B0A339A0093B3F7 /* Ingredient.m in Sources */ = {isa = PBXBuildFile; fileRef = D992EE2C1B0A339A0093B3F7 /* Ingredient.m */; };
 		D992EE331B0A34DA0093B3F7 /* Fridge+Cat.m in Sources */ = {isa = PBXBuildFile; fileRef = D992EE321B0A34DA0093B3F7 /* Fridge+Cat.m */; };
-		D992EE391B0B4B540093B3F7 /* RecipesCDTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D992EE381B0B4B540093B3F7 /* RecipesCDTVC.m */; };
 		D992EE3C1B0B54090093B3F7 /* UIViewController+Context.m in Sources */ = {isa = PBXBuildFile; fileRef = D992EE3B1B0B54090093B3F7 /* UIViewController+Context.m */; };
 		D992EE441B0B73090093B3F7 /* Recipe.m in Sources */ = {isa = PBXBuildFile; fileRef = D992EE431B0B73090093B3F7 /* Recipe.m */; };
+		D992EE4D1B0B9D220093B3F7 /* iFridge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D992EE451B0B9D220093B3F7 /* iFridge.xcdatamodeld */; };
+		D992EE4E1B0B9D220093B3F7 /* Ingredient+Cat.m in Sources */ = {isa = PBXBuildFile; fileRef = D992EE481B0B9D220093B3F7 /* Ingredient+Cat.m */; };
+		D992EE4F1B0B9D220093B3F7 /* Recipe+Cat.m in Sources */ = {isa = PBXBuildFile; fileRef = D992EE4A1B0B9D220093B3F7 /* Recipe+Cat.m */; };
+		D992EE501B0B9D220093B3F7 /* RecipesCDTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D992EE4C1B0B9D220093B3F7 /* RecipesCDTVC.m */; };
 		EF56840EE7AA6C558D3C459C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4825B68449CDFCB0DC868FD /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -108,23 +108,23 @@
 		35A9D70D1B08F1B7005EF9BF /* GooglePlus.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GooglePlus.bundle; sourceTree = "<group>"; };
 		35A9D70E1B08F1B7005EF9BF /* GooglePlus.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GooglePlus.framework; sourceTree = "<group>"; };
 		7B6D530F70A59FB7713BE0D2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		D992EE111B0A315E0093B3F7 /* iFridge.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; name = iFridge.xcdatamodel; path = "../../iFridge-master/iFridge/iFridge.xcdatamodeld/iFridge.xcdatamodel"; sourceTree = "<group>"; };
-		D992EE141B0A315E0093B3F7 /* Recipe+Cat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Recipe+Cat.h"; path = "../../iFridge-master/iFridge/Recipe+Cat.h"; sourceTree = "<group>"; };
-		D992EE151B0A315E0093B3F7 /* Recipe+Cat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Recipe+Cat.m"; path = "../../iFridge-master/iFridge/Recipe+Cat.m"; sourceTree = "<group>"; };
-		D992EE181B0A315E0093B3F7 /* Ingredient+Cat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Ingredient+Cat.h"; path = "../../iFridge-master/iFridge/Ingredient+Cat.h"; sourceTree = "<group>"; };
-		D992EE191B0A315E0093B3F7 /* Ingredient+Cat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Ingredient+Cat.m"; path = "../../iFridge-master/iFridge/Ingredient+Cat.m"; sourceTree = "<group>"; };
 		D992EE281B0A339A0093B3F7 /* Fridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fridge.h; sourceTree = "<group>"; };
 		D992EE291B0A339A0093B3F7 /* Fridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fridge.m; sourceTree = "<group>"; };
 		D992EE2B1B0A339A0093B3F7 /* Ingredient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ingredient.h; sourceTree = "<group>"; };
 		D992EE2C1B0A339A0093B3F7 /* Ingredient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ingredient.m; sourceTree = "<group>"; };
 		D992EE311B0A34DA0093B3F7 /* Fridge+Cat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Fridge+Cat.h"; sourceTree = "<group>"; };
 		D992EE321B0A34DA0093B3F7 /* Fridge+Cat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Fridge+Cat.m"; sourceTree = "<group>"; };
-		D992EE371B0B4B540093B3F7 /* RecipesCDTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecipesCDTVC.h; path = "../../iFridge-master/iFridge/RecipesCDTVC.h"; sourceTree = "<group>"; };
-		D992EE381B0B4B540093B3F7 /* RecipesCDTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecipesCDTVC.m; path = "../../iFridge-master/iFridge/RecipesCDTVC.m"; sourceTree = "<group>"; };
 		D992EE3A1B0B54090093B3F7 /* UIViewController+Context.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Context.h"; sourceTree = "<group>"; };
 		D992EE3B1B0B54090093B3F7 /* UIViewController+Context.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Context.m"; sourceTree = "<group>"; };
 		D992EE421B0B73090093B3F7 /* Recipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Recipe.h; sourceTree = "<group>"; };
 		D992EE431B0B73090093B3F7 /* Recipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Recipe.m; sourceTree = "<group>"; };
+		D992EE461B0B9D220093B3F7 /* iFridge.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iFridge.xcdatamodel; sourceTree = "<group>"; };
+		D992EE471B0B9D220093B3F7 /* Ingredient+Cat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Ingredient+Cat.h"; path = "../Ingredient+Cat.h"; sourceTree = "<group>"; };
+		D992EE481B0B9D220093B3F7 /* Ingredient+Cat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Ingredient+Cat.m"; path = "../Ingredient+Cat.m"; sourceTree = "<group>"; };
+		D992EE491B0B9D220093B3F7 /* Recipe+Cat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Recipe+Cat.h"; path = "../Recipe+Cat.h"; sourceTree = "<group>"; };
+		D992EE4A1B0B9D220093B3F7 /* Recipe+Cat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Recipe+Cat.m"; path = "../Recipe+Cat.m"; sourceTree = "<group>"; };
+		D992EE4B1B0B9D220093B3F7 /* RecipesCDTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecipesCDTVC.h; path = ../RecipesCDTVC.h; sourceTree = "<group>"; };
+		D992EE4C1B0B9D220093B3F7 /* RecipesCDTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecipesCDTVC.m; path = ../RecipesCDTVC.m; sourceTree = "<group>"; };
 		E4825B68449CDFCB0DC868FD /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF46D8F0A983B94B8040C4CE /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -284,9 +284,9 @@
 		359709691B04E9F8005064C0 /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
-				D992EE371B0B4B540093B3F7 /* RecipesCDTVC.h */,
-				D992EE381B0B4B540093B3F7 /* RecipesCDTVC.m */,
-				D992EE111B0A315E0093B3F7 /* iFridge.xcdatamodel */,
+				D992EE4B1B0B9D220093B3F7 /* RecipesCDTVC.h */,
+				D992EE4C1B0B9D220093B3F7 /* RecipesCDTVC.m */,
+				D992EE451B0B9D220093B3F7 /* iFridge.xcdatamodeld */,
 				D992EE421B0B73090093B3F7 /* Recipe.h */,
 				D992EE431B0B73090093B3F7 /* Recipe.m */,
 				D992EE2B1B0A339A0093B3F7 /* Ingredient.h */,
@@ -328,12 +328,12 @@
 		D992EE3E1B0B6DDC0093B3F7 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				D992EE141B0A315E0093B3F7 /* Recipe+Cat.h */,
-				D992EE151B0A315E0093B3F7 /* Recipe+Cat.m */,
+				D992EE471B0B9D220093B3F7 /* Ingredient+Cat.h */,
+				D992EE481B0B9D220093B3F7 /* Ingredient+Cat.m */,
+				D992EE491B0B9D220093B3F7 /* Recipe+Cat.h */,
+				D992EE4A1B0B9D220093B3F7 /* Recipe+Cat.m */,
 				D992EE311B0A34DA0093B3F7 /* Fridge+Cat.h */,
 				D992EE321B0A34DA0093B3F7 /* Fridge+Cat.m */,
-				D992EE181B0A315E0093B3F7 /* Ingredient+Cat.h */,
-				D992EE191B0A315E0093B3F7 /* Ingredient+Cat.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -485,16 +485,16 @@
 				D992EE2D1B0A339A0093B3F7 /* Ingredient.m in Sources */,
 				D992EE3C1B0B54090093B3F7 /* UIViewController+Context.m in Sources */,
 				357A58F61AFFDF3C0094B0AC /* AppDelegate.m in Sources */,
-				D992EE391B0B4B540093B3F7 /* RecipesCDTVC.m in Sources */,
+				D992EE4D1B0B9D220093B3F7 /* iFridge.xcdatamodeld in Sources */,
 				D992EE2A1B0A339A0093B3F7 /* Fridge.m in Sources */,
+				D992EE4F1B0B9D220093B3F7 /* Recipe+Cat.m in Sources */,
 				3597096F1B04FD98005064C0 /* RecipesCell.m in Sources */,
-				D992EE1A1B0A315E0093B3F7 /* iFridge.xcdatamodel in Sources */,
-				D992EE1E1B0A315E0093B3F7 /* Ingredient+Cat.m in Sources */,
+				D992EE4E1B0B9D220093B3F7 /* Ingredient+Cat.m in Sources */,
 				D992EE331B0A34DA0093B3F7 /* Fridge+Cat.m in Sources */,
+				D992EE501B0B9D220093B3F7 /* RecipesCDTVC.m in Sources */,
 				359709671B04E9D3005064C0 /* RecipesTableViewControler.m in Sources */,
 				357A58F31AFFDF3C0094B0AC /* main.m in Sources */,
 				3559BA821B064EB30040DCB6 /* SearchViewController.m in Sources */,
-				D992EE1C1B0A315E0093B3F7 /* Recipe+Cat.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -711,6 +711,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D992EE451B0B9D220093B3F7 /* iFridge.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D992EE461B0B9D220093B3F7 /* iFridge.xcdatamodel */,
+			);
+			currentVersion = D992EE461B0B9D220093B3F7 /* iFridge.xcdatamodel */;
+			path = iFridge.xcdatamodeld;
+			sourceTree = SOURCE_ROOT;
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 357A58E51AFFDF3C0094B0AC /* Project object */;
 }
