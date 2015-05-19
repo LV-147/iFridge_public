@@ -119,8 +119,11 @@ static NSString * const kClientID = @"479226462698-nuoqkaoi6c79be4ghh4he3ov05bb1
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
 
+    if ([segue.identifier isEqualToString:@"SegueToRecipesTVC"]){
+       
         RecipesTableViewController *newController = segue.destinationViewController;
-        newController.myLink = [self.searchTextField.text stringByReplacingOccurrencesOfString:@" " withString:@"+"];
+        newController.myLink = [NSString stringWithString: self.searchTextField.text];
+    }
 }
 
 @end
