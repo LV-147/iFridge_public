@@ -13,10 +13,11 @@
 @interface RecipeWithImage : UIViewController
 @property (strong, nonatomic) IBOutlet UIImageView *imageForDish;
 @property (strong, nonatomic) IBOutlet UITextView *textViewForRecipe;
-
 @property (strong, nonatomic) NSString * imageLink;
-@property (strong, nonatomic) NSDictionary * ingredientsLines;
+@property (strong, nonatomic) NSMutableDictionary * ingredientsLines;
+@property (strong, nonatomic) NSMutableArray *avaivableRecipes;
+@property (strong, nonatomic) NSIndexPath *recipeIndex;
 
-@property (strong, nonatomic) NSDictionary *recipeDict;
+- (void) setRecipeWithImageContents:(NSInteger)recipeIndexPath;
 
 @end

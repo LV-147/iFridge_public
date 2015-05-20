@@ -12,24 +12,20 @@
 	<dict>
 		<key>67BA294E0748BD44FA313FE931CE6878994DE86E</key>
 		<string>https://github.com/AlexeyPelekh/iFridge.git</string>
-		<key>EF8555939AE26E06DFF0F368FA366E96F308D70E</key>
-		<string>https://github.com/LV-147/iFridge_public.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>iFridge.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>67BA294E0748BD44FA313FE931CE6878994DE86E</key>
-		<string>../../../iFridge</string>
-		<key>EF8555939AE26E06DFF0F368FA366E96F308D70E</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/LV-147/iFridge_public.git</string>
+	<string>https://github.com/AlexeyPelekh/iFridge.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>EF8555939AE26E06DFF0F368FA366E96F308D70E</string>
+	<string>67BA294E0748BD44FA313FE931CE6878994DE86E</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -39,14 +35,6 @@
 			<string>67BA294E0748BD44FA313FE931CE6878994DE86E</string>
 			<key>IDESourceControlWCCName</key>
 			<string>iFridge</string>
-		</dict>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.git</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>EF8555939AE26E06DFF0F368FA366E96F308D70E</string>
-			<key>IDESourceControlWCCName</key>
-			<string>iFridge_public</string>
 		</dict>
 	</array>
 </dict>
