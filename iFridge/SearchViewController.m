@@ -89,7 +89,7 @@ static NSString * const kClientID = @"479226462698-nuoqkaoi6c79be4ghh4he3ov05bb1
 
 - (void)didDisconnectWithError:(NSError *)error {
     if (error) {
-        NSLog(@"Received error %@", error);
+        NSLog(@"Received ervfbffror %@", error);
     } else {
         // Пользователь вышел и отключился.
         // Удалим данные пользователя в соответствии с Условиями использования Google+.
