@@ -50,12 +50,17 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-   
-
-   
+    
    return self.recipes.count;
 }
 
+-(void) doAnimation:(UITableViewCell*) cell{
+    [cell.layer setBackgroundColor:[UIColor blackColor].CGColor];
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.5];
+    [cell.layer setBackgroundColor:[UIColor whiteColor].CGColor];
+    [UIView commitAnimations];
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     RecipesCell *cell = [tableView dequeueReusableCellWithIdentifier:@"myCell" forIndexPath:indexPath];
@@ -84,9 +89,14 @@
     NSString *fatTotal = [NSString stringWithFormat:@"fat: %2.3f", str2];
     cell.fatTotal.text = [NSString stringWithString:fatTotal];
     
+    [self doAnimation:cell];
+    
     return cell;
 }
 
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+    [self doAnimation:cell];
+}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
