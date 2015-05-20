@@ -20,14 +20,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSString *myRequest = [[NSString alloc] initWithFormat:@"%@%@%@", @"https://api.edamam.com/search?q=",self.myLink,@"&app_id=098aa935&app_key=e6f6e485b0222cf1b48439a164562270"];
+    NSString *myRequest = [[NSString alloc] initWithFormat:@"%@%@%@", @"https://api.edamam.com/search?q=",self.myLink,@"&app_id=4e8543af&app_key=e1309c8e747bdd4d7363587a4435f5ee&from=0&to=100"];
     NSLog(@"myLink: %@", myRequest);
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:myRequest parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         self.allRecipes = (NSDictionary *) responseObject;
         self.recipes = self.allRecipes[@"hits"];
-       NSLog(@"JSON: %@", self.recipes);
+       //NSLog(@"JSON: %@", self.recipes);
 
         [self.tableView reloadData];
         
