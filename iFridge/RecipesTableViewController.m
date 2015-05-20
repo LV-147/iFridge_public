@@ -20,6 +20,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //activityIndicator.transform = //center = CGPointMake(400.0, 326.0);
+    
+    activityIndicator.frame = CGRectMake(activityIndicator.frame.origin.x, 326.0, activityIndicator.frame.size.width, activityIndicator.frame.size.height);
+    
+    [self.tableView addSubview:activityIndicator];
+    
+    timer = [NSTimer scheduledTimerWithTimeInterval:1.0/2.0 target:self selector:@selector(loading) userInfo:nil repeats:YES];
+    
+    
     NSString *myRequest = [[NSString alloc] initWithFormat:@"%@%@%@", @"https://api.edamam.com/search?q=",self.myLink,@"&app_id=4e8543af&app_key=e1309c8e747bdd4d7363587a4435f5ee&from=0&to=100"];
     NSLog(@"myLink: %@", myRequest);
     
@@ -28,13 +37,22 @@
         self.allRecipes = (NSDictionary *) responseObject;
         self.recipes = self.allRecipes[@"hits"];
        //NSLog(@"JSON: %@", self.recipes);
-
+     
         [self.tableView reloadData];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
 
+}
+
+-(void)loading{
+    if (!self.tableView) {
+        [activityIndicator stopAnimating];
+    }
+    else{
+        [activityIndicator startAnimating];
+        }
 }
 
 - (void)didReceiveMemoryWarning {
