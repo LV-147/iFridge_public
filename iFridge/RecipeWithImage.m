@@ -42,7 +42,7 @@
 
     ++self.recipeRow;
     //костиль, треба зробити універсальний (!self.recipeRow) i td
-    if(self.recipeRow == 10){
+    if(self.recipeRow == self.avaivableRecipes.count){
         self.recipeRow = 0;
         [self setRecipeWithImageContents:self.recipeRow];
     }else{
@@ -55,7 +55,7 @@
 - (IBAction)goToPreviousCell:(id)sender {
     --self.recipeRow;
     if (self.recipeRow == -1){
-        self.recipeRow = 9;
+        self.recipeRow = self.avaivableRecipes.count - 1;
         [self setRecipeWithImageContents:self.recipeRow];
     }else{
         [self setRecipeWithImageContents:self.recipeRow];

@@ -11,7 +11,11 @@
 #import <AFNetworking/AFNetworking.h>
 
 
-@interface RecipesTableViewController : UITableViewController
+@interface RecipesTableViewController : UITableViewController{
+    IBOutlet UIActivityIndicatorView *activityIndicator;
+    NSTimer *timer;
+    
+}
 @property (strong, nonatomic) NSString *myLink;
 @property (strong, nonatomic) NSDictionary *allRecipes;
 @property (strong, nonatomic) NSMutableArray *recipes;
@@ -22,5 +26,7 @@
 @property (strong, nonatomic) NSMutableDictionary *fat;
 @property (strong, nonatomic) NSMutableDictionary *sugars;
 @property (strong, nonatomic) NSMutableDictionary *cookingLevel;
+
+
 
 @end
