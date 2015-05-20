@@ -38,12 +38,15 @@
         self.recipes = self.allRecipes[@"hits"];
        //NSLog(@"JSON: %@", self.recipes);
         dispatch_async(dispatch_get_main_queue(), ^{
+            
             [self.tableView reloadData];
         });
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
 
+    [activityIndicator stopAnimating];
+    
 }
 
 -(void)loading{
@@ -135,7 +138,7 @@
 }
 
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
-//    [self doAnimation:cell];
+    [self doAnimation:cell];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
