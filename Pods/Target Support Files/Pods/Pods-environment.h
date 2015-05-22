@@ -60,9 +60,3 @@
 #define COCOAPODS_VERSION_MINOR_SDWebImage_Core 7
 #define COCOAPODS_VERSION_PATCH_SDWebImage_Core 2
 
-// VK-ios-sdk
-#define COCOAPODS_POD_AVAILABLE_VK_ios_sdk
-#define COCOAPODS_VERSION_MAJOR_VK_ios_sdk 1
-#define COCOAPODS_VERSION_MINOR_VK_ios_sdk 1
-#define COCOAPODS_VERSION_PATCH_VK_ios_sdk 7
-

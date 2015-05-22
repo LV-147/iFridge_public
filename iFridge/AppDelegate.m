@@ -9,7 +9,6 @@
 #import "AppDelegate.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
-#import "VKSdk.h"
 #import <GooglePlus/GPPURLHandler.h>
 
 @interface AppDelegate ()
@@ -31,7 +30,6 @@
   sourceApplication:(NSString *)sourceApplication
          annotation:(id)annotation {
     
-    [VKSdk processOpenURL:url fromApplication:sourceApplication];
     return [[FBSDKApplicationDelegate sharedInstance] application:application
                                                           openURL:url
                                                 sourceApplication:sourceApplication

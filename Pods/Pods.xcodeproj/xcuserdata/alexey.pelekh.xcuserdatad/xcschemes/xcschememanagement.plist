@@ -14,11 +14,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-VK-ios-sdk.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,22 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0E5A80A55801256A85C1333E</key>
+		<key>130383C33B958966201E0822</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1414B370C320CE6B16A4D6FB</key>
+		<key>3A81936F619845CAA6567295</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9B6BF73AA1245A3AC5C721AB</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>DEB921A716206FE65C9D74D5</key>
+		<key>C71C2B224DFFB199AADB29D6</key>
 		<dict>
 			<key>primary</key>
 			<true/>

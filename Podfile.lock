@@ -23,16 +23,13 @@ PODS:
   - SDWebImage (3.7.2):
     - SDWebImage/Core (= 3.7.2)
   - SDWebImage/Core (3.7.2)
-  - VK-ios-sdk (1.1.7)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
   - SDWebImage (~> 3.7)
-  - VK-ios-sdk
 
 SPEC CHECKSUMS:
   AFNetworking: e1d86c2a96bb5d2e7408da36149806706ee122fe
   SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29
-  VK-ios-sdk: 303df4a8c5ef09dc3be4527b6d7afc7ab874f4f1
 
 COCOAPODS: 0.37.1

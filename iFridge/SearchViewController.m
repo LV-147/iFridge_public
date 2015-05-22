@@ -9,11 +9,10 @@
 #import "SearchViewController.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
-#import "VKSdk.h"
 #import <GoogleOpenSource/GTLPlusConstants.h>
 #import <GooglePlus/GPPSignInButton.h>
 
-static NSString * const vkAppID = @"4921324";
+
 static NSString * const kClientID = @"479226462698-nuoqkaoi6c79be4ghh4he3ov05bb1kpc.apps.googleusercontent.com";
 
 
@@ -34,17 +33,7 @@ static NSString * const kClientID = @"479226462698-nuoqkaoi6c79be4ghh4he3ov05bb1
     signIn.scopes = [NSArray arrayWithObjects:
                      kGTLAuthScopePlusLogin,nil];
     signIn.delegate = self;
-    
-    NSArray* vkPermissions = [NSArray arrayWithObjects: @"photos", @"friends", @"wall", @"audio", @"video", @"docs", @"notes", @"pages",
-                        @"status", @"groups", @"messages",nil];
-    
-    
-//    [VKSdk initializeWithDelegate:self andAppId:vkAppID ];
-//    if ([VKSdk wakeUpSession])
-//    {
-//       [VKSdk authorize:vkPermissions revokeAccess:YES];
-//        
-//    }
+
     
     FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
     
@@ -66,13 +55,7 @@ static NSString * const kClientID = @"479226462698-nuoqkaoi6c79be4ghh4he3ov05bb1
     }
 }
 
--(void) vkSdkReceivedNewToken:(VKAccessToken*) newToken{
-    
-}
 
--(void) vkSdkUserDeniedAccess:(VKError*) authorizationError {
-    
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
