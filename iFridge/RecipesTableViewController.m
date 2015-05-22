@@ -20,21 +20,39 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSString *myRequest = [[NSString alloc] initWithFormat:@"%@%@%@", @"https://api.edamam.com/search?q=",self.myLink,@"&app_id=098aa935&app_key=e6f6e485b0222cf1b48439a164562270"];
+    //activityIndicator.transform = //center = CGPointMake(400.0, 326.0);
+    
+    activityIndicator.frame = CGRectMake(activityIndicator.frame.origin.x, 326.0, activityIndicator.frame.size.width, activityIndicator.frame.size.height);
+    
+    [self.tableView addSubview:activityIndicator];
+    
+    timer = [NSTimer scheduledTimerWithTimeInterval:1.0/2.0 target:self selector:@selector(loading) userInfo:nil repeats:YES];
+    
+    
+    NSString *myRequest = [[NSString alloc] initWithFormat:@"%@%@%@", @"https://api.edamam.com/search?q=",self.myLink,@"&app_id=4e8543af&app_key=e1309c8e747bdd4d7363587a4435f5ee&from=0&to=100"];
     NSLog(@"myLink: %@", myRequest);
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:myRequest parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         self.allRecipes = (NSDictionary *) responseObject;
         self.recipes = self.allRecipes[@"hits"];
-       NSLog(@"JSON: %@", self.recipes);
-
-        [self.tableView reloadData];
-        
+       //NSLog(@"JSON: %@", self.recipes);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
 
+}
+
+-(void)loading{
+    if (!self.tableView) {
+        [activityIndicator stopAnimating];
+    }
+    else{
+        [activityIndicator startAnimating];
+        }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -50,22 +68,49 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-   
-
-   
+    
    return self.recipes.count;
 }
 
+-(void) doAnimation:(UITableViewCell*) cell{
+//    [cell.layer setBackgroundColor:[UIColor blackColor].CGColor];
+//    [UIView beginAnimations:nil context:NULL];
+//    [UIView setAnimationDuration:0.1];
+//    [cell.layer setBackgroundColor:[UIColor whiteColor].CGColor];
+//    [UIView commitAnimations];
+    [cell setBackgroundColor:[UIColor blackColor]];
+    
+    [UIView animateWithDuration:0.1
+                          delay:0.0
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^(void) {
+                         //Leave it empty
+                         [cell setBackgroundColor:[UIColor whiteColor]];
+                     }
+                     completion:^(BOOL finished){
+                         
+//                         // Your code goes here
+//                         [UIView animateWithDuration:1.0 delay:0.0 options:
+//                          UIViewAnimationOptionCurveEaseIn animations:^{
+//                          } completion:^ (BOOL completed) {}];
+                     }];
+
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     RecipesCell *cell = [tableView dequeueReusableCellWithIdentifier:@"myCell" forIndexPath:indexPath];
    
+    
+  
 
     cell.nameOfDish.text = self.recipes[indexPath.row][@"recipe"][@"label"];
     
     cell.cookingLevel.text = self.recipes[indexPath.row][@"recipe"][@"level"];
     
     cell.cookingTime.text = [NSString stringWithFormat:@"cookingTime: %@", self.recipes[indexPath.row][@"recipe"][@"cookingTime"]];
+    
+//    cell.caloriesTotal.text = [NSString stringWithFormat:@"caloriesTotal: %@",  self.recipes[indexPath.row][@"recipe"][@"calories"]];
+//    cell.caloriesTotal.text = [cell.caloriesTotal.text substringToIndex:22];
     
     double str1 = [self.recipes[indexPath.row][@"recipe"][@"calories"] doubleValue];
     NSString *caloriesTotal = [NSString stringWithFormat:@"calories: %2.3f", str1];
@@ -83,10 +128,15 @@
     double str2 = [self.recipes[indexPath.row][@"recipe"][@"totalNutrients"][@"FAT"][@"quantity"] doubleValue];
     NSString *fatTotal = [NSString stringWithFormat:@"fat: %2.3f", str2];
     cell.fatTotal.text = [NSString stringWithString:fatTotal];
+   
+    [self doAnimation:cell];
     
     return cell;
 }
 
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+//    [self doAnimation:cell];
+}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
