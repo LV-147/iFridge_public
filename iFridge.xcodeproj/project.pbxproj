@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		35466FB91B08CE9A0016229C /* libPods-VK-ios-sdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35466FB81B08CE9A0016229C /* libPods-VK-ios-sdk.a */; };
 		354670DC1B08E1150016229C /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 354670DB1B08E1150016229C /* AddressBook.framework */; };
 		354670DE1B08E11D0016229C /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 354670DD1B08E11D0016229C /* AssetsLibrary.framework */; };
 		354670E01B08E1250016229C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 354670DF1B08E1250016229C /* Foundation.framework */; };
@@ -135,7 +134,6 @@
 				354670DE1B08E11D0016229C /* AssetsLibrary.framework in Frameworks */,
 				35A9D70F1B08F1B7005EF9BF /* GoogleOpenSource.framework in Frameworks */,
 				354670DC1B08E1150016229C /* AddressBook.framework in Frameworks */,
-				35466FB91B08CE9A0016229C /* libPods-VK-ios-sdk.a in Frameworks */,
 				EF56840EE7AA6C558D3C459C /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
