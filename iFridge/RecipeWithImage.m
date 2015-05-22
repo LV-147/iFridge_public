@@ -7,29 +7,27 @@
 //
 
 #import "RecipeWithImage.h"
-#import "RecipesTableViewController.h"
+#import "RecipesTVC.h"
 #import "Recipe+Cat.h"
 #import "UIViewController+Context.h"
 #import "AppDelegate.h"
 
 
 @interface RecipeWithImage ()
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *saveButton;
 
 @end
 
 @implementation RecipeWithImage
 
-- (IBAction)saveRecipeToCoreData:(UIBarButtonItem *)sender {
-    
-    [Recipe createRecipeWithInfo:self.recipeDict inManagedObiectContext:self.currentContext];
-    
-}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //    NSLog(@"JSON: %@", self.imageLink);
-    //    NSLog(@"JSON: %@", self.ingredientsLines);
+    if (self.recipeSaved) {
+        self.saveButton.title = @"Delete";
+    }else self.saveButton.title = @"Save";
     
     self.textViewForRecipe.text = [NSString stringWithFormat:@"%@", self.ingredientsLines];
     
@@ -39,6 +37,32 @@
                                                            
                                                            [self.imageForDish setBackgroundColor:[UIColor colorWithPatternImage:image]];
                                                        }];
+    
+}
+
+- (IBAction)saveRecipeToCoreData:(UIBarButtonItem *)sender {
+    
+    if (self.recipeDict) {
+        if (!self.recipeSaved){
+            [Recipe createRecipeWithInfo:self.recipeDict inManagedObiectContext:self.currentContext];
+            self.recipeSaved = YES;
+            sender.title = @"Delete";
+        }else{
+            [Recipe deleteRecipeWithInfo:self.recipeDict from:self.currentContext];
+            self.recipeSaved = NO;
+            sender.title = @"Save";
+        }
+    }else{
+        if (!self.recipeSaved) {
+            [Recipe saveRecipe:self.recipe inManagedObjectContext:self.currentContext];
+            self.recipeSaved = YES;
+            sender.title = @"Delete";
+        }else{
+            [Recipe deleteRecipe:self.recipe fromManagedObjectContext:self.currentContext];
+            self.recipeSaved = NO;
+            sender.title = @"Save";
+        }
+    }
     
 }
 

@@ -46,16 +46,22 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="OperationFood.png" translatesAutoresizingMaskIntoConstraints="NO" id="YpO-rF-qfW">
                                 <rect key="frame" x="79" y="159" width="216" height="368"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Nh-kO-0cW">
+                                <rect key="frame" x="16" y="123" width="154" height="46"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="My recipes">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="searchButton:" destination="GfN-dv-fDj" eventType="touchUpInside" id="ByA-gG-PmZ"/>
+                                    <segue destination="LMa-eT-kqI" kind="push" identifier="SegueToMyRecipes" id="y47-Cr-Jsy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="sAQ-ny-PJl">
-                        <barButtonItem key="rightBarButtonItem" title="My recipes" id="xJw-vo-eoy">
-                            <connections>
-                                <segue destination="A1b-rl-5RT" kind="push" identifier="SegueToMyRecipes" id="Ia5-yx-fhM"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="sAQ-ny-PJl"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="searchTextField" destination="HGG-sm-Rr1" id="1UG-gG-Xs6"/>
@@ -66,10 +72,10 @@
             </objects>
             <point key="canvasLocation" x="-389.5" y="-2377.5"/>
         </scene>
-        <!--Recipes Table View Controller-->
+        <!--RecipesTVC-->
         <scene sceneID="xTM-nS-cJI">
             <objects>
-                <tableViewController id="LMa-eT-kqI" customClass="RecipesTableViewController" sceneMemberID="viewController">
+                <tableViewController id="LMa-eT-kqI" customClass="RecipesTVC" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="161" sectionHeaderHeight="22" sectionFooterHeight="22" id="tB7-Bw-lU0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -142,9 +148,23 @@
                             <outlet property="delegate" destination="LMa-eT-kqI" id="d9k-oq-sSM"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="AA2-yN-rFa"/>
+                    <navigationItem key="navigationItem" id="AA2-yN-rFa">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="JFK-o1-5WF">
+                            <rect key="frame" x="87" y="7" width="201" height="31"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Search results"/>
+                                <segment title="My recipes"/>
+                            </segments>
+                            <connections>
+                                <action selector="selectDataSource:" destination="LMa-eT-kqI" eventType="valueChanged" id="zuF-Iu-Mxq"/>
+                            </connections>
+                        </segmentedControl>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="selectDataSourceButton" destination="JFK-o1-5WF" id="cy1-yn-3u8"/>
                         <outlet property="tableView" destination="tB7-Bw-lU0" id="0Eh-m2-LAi"/>
                     </connections>
                 </tableViewController>
@@ -187,6 +207,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="imageForDish" destination="Ulz-cA-xnm" id="UVS-a5-vFJ"/>
+                        <outlet property="saveButton" destination="xMc-09-5vp" id="IBW-Ov-Agk"/>
                         <outlet property="textViewForRecipe" destination="Gry-kJ-tXI" id="au9-gs-C1a"/>
                     </connections>
                 </viewController>
@@ -213,97 +234,11 @@
             </objects>
             <point key="canvasLocation" x="-889.5" y="-2377.5"/>
         </scene>
-        <!--RecipesCDTVC-->
-        <scene sceneID="5Ty-zI-9fW">
-            <objects>
-                <tableViewController id="A1b-rl-5RT" customClass="RecipesCDTVC" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="161" sectionHeaderHeight="22" sectionFooterHeight="22" id="xJc-ay-d4a">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="RecipeCell" rowHeight="161" id="Ohv-2q-vqj" customClass="RecipesCell">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ohv-2q-vqj" id="E2N-F8-ysD">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aur-dk-gKJ">
-                                            <rect key="frame" x="8" y="8" width="359" height="30"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CookingTime" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wWb-k3-SRr">
-                                            <rect key="frame" x="8" y="89" width="173" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Calories" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ua3-xw-2mZ">
-                                            <rect key="frame" x="8" y="130" width="173" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cooking lvl" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3F6-jB-sPg">
-                                            <rect key="frame" x="8" y="47" width="154" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TotalWeight" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hww-RP-ywE">
-                                            <rect key="frame" x="202" y="90" width="173" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fat" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x0A-6L-e6j">
-                                            <rect key="frame" x="202" y="131" width="154" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sugars" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y80-tg-9ag">
-                                            <rect key="frame" x="202" y="48" width="154" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="caloriesTotal" destination="Ua3-xw-2mZ" id="0xF-Sv-0N2"/>
-                                    <outlet property="cookingLevel" destination="3F6-jB-sPg" id="LcL-hf-eRM"/>
-                                    <outlet property="cookingTime" destination="wWb-k3-SRr" id="vWf-ar-fVH"/>
-                                    <outlet property="fatTotal" destination="x0A-6L-e6j" id="xUJ-fn-hF1"/>
-                                    <outlet property="nameOfDish" destination="Aur-dk-gKJ" id="Vkb-2A-9ZG"/>
-                                    <outlet property="sugarsTotal" destination="y80-tg-9ag" id="jgY-kT-RWV"/>
-                                    <outlet property="weightTotal" destination="Hww-RP-ywE" id="XhS-sq-zqg"/>
-                                    <segue destination="Oyr-fJ-N5i" kind="push" id="ShR-3C-mnG"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="A1b-rl-5RT" id="qR6-WD-B5L"/>
-                            <outlet property="delegate" destination="A1b-rl-5RT" id="KHM-h9-ocB"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="h0E-nG-YTb"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <connections>
-                        <outlet property="tableView" destination="xJc-ay-d4a" id="mXe-hD-CL0"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2NR-X6-rQl" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="83.5" y="-1560.5"/>
-        </scene>
     </scenes>
     <resources>
         <image name="OperationFood.png" width="200" height="318"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ShR-3C-mnG"/>
+        <segue reference="y47-Cr-Jsy"/>
     </inferredMetricsTieBreakers>
 </document>

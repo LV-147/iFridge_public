@@ -28,7 +28,6 @@ static NSString * const kClientID = @"479226462698-nuoqkaoi6c79be4ghh4he3ov05bb1
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     GPPSignIn *signIn = [GPPSignIn sharedInstance];
     signIn.clientID = kClientID;
     signIn.scopes = [NSArray arrayWithObjects:
@@ -41,7 +40,6 @@ static NSString * const kClientID = @"479226462698-nuoqkaoi6c79be4ghh4he3ov05bb1
     
     [self.view addSubview:loginButton];
     [signIn trySilentAuthentication];
-
 }
 
 - (void)finishedWithAuth: (GTMOAuth2Authentication *)auth
@@ -110,8 +108,15 @@ static NSString * const kClientID = @"479226462698-nuoqkaoi6c79be4ghh4he3ov05bb1
 
     if ([segue.identifier isEqualToString:@"SegueToRecipesTVC"]){
        
-        RecipesTableViewController *newController = segue.destinationViewController;
-        newController.myLink = [NSString stringWithString: self.searchTextField.text];
+        RecipesTVC *newController = segue.destinationViewController;
+        newController.query = [NSString stringWithString: self.searchTextField.text];
+        newController.dataSource = @"Search results";
+    }
+    if ([segue.identifier isEqualToString:@"SegueToMyRecipes"]){
+        RecipesTVC *newController = segue.destinationViewController;
+        newController.query = [NSString stringWithString: self.searchTextField.text];
+        newController.dataSource = @"My recipes";
+        newController.selectDataSourceButton.selectedSegmentIndex = 1;
     }
 }
 

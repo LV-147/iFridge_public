@@ -11,10 +11,11 @@
 #import <AFNetworking/AFNetworking.h>
 
 
-@interface RecipesTableViewController : UITableViewController
-@property (strong, nonatomic) NSString *myLink;
+@interface RecipesTVC : UITableViewController
+@property (strong, nonatomic) NSString *query;
 @property (strong, nonatomic) NSDictionary *allRecipes;
 @property (strong, nonatomic) NSArray *recipes;
-
-
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UISegmentedControl *selectDataSourceButton;
+@property (strong, nonatomic) NSString *dataSource;
 @end

@@ -9,6 +9,7 @@
 
 #import <SDWebImage/SDWebImageDownloader.h>
 #import <SDWebImage/SDWebImageManager.h>
+#import "Recipe.h"
 
 @interface RecipeWithImage : UIViewController
 @property (strong, nonatomic) IBOutlet UIImageView *imageForDish;
@@ -18,5 +19,7 @@
 @property (strong, nonatomic) NSDictionary * ingredientsLines;
 
 @property (strong, nonatomic) NSDictionary *recipeDict;
+@property (nonatomic) BOOL recipeSaved;
+@property (nonatomic, strong)Recipe *recipe;
 
 @end
