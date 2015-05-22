@@ -10,6 +10,8 @@
 #import "RecipesTableViewController.h"
 #import "VKSdk.h"
 #import <GooglePlus/GPPSignIn.h>
+#import "DatesViewController.h"
+
 
 @class GPPSignInButton;
 
@@ -18,6 +20,7 @@
 
 @property (strong, nonatomic) IBOutlet UITextField *searchTextField;
 @property (retain, nonatomic) IBOutlet GPPSignInButton *signInButton;
+
 
 - (IBAction)searchButton:(id)sender;
 

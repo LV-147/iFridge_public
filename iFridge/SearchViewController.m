@@ -96,6 +96,11 @@ static NSString * const kClientID = @"479226462698-nuoqkaoi6c79be4ghh4he3ov05bb1
     }
 }
 
+ - (IBAction)calendar:(UIButton *)sender {
+
+ }
+
+
 - (IBAction)searchButton:(id)sender {
     UIAlertView *noText = [[UIAlertView alloc] initWithTitle:@"Table is empty because no text was detected!" message:@"Please, enter some text in Search field!" delegate:self cancelButtonTitle:@"Ok!" otherButtonTitles:nil];
     
@@ -118,9 +123,18 @@ static NSString * const kClientID = @"479226462698-nuoqkaoi6c79be4ghh4he3ov05bb1
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-
+    if ([sender tag] ==1) {
         RecipesTableViewController *newController = segue.destinationViewController;
         newController.myLink = [self.searchTextField.text stringByReplacingOccurrencesOfString:@" " withString:@"+"];
+//    } else if ([sender tag] == 2) {
+////        DatesViewController *datesController = segue.destinationViewController;
+////        [datesController.datePicker ]
+    }
+
+
+//    DatesViewController *datesController = segue.destinationViewController;
+//    RecipesTableViewController *newController = segue.destinationViewController;
+//    newController.myLink = [self.searchTextField.text stringByReplacingOccurrencesOfString:@" " withString:@"+"];
 }
 
 @end
