@@ -36,6 +36,7 @@
     [manager GET:myRequest parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         self.allRecipes = (NSDictionary *) responseObject;
         self.recipes = self.allRecipes[@"hits"];
+        
        //NSLog(@"JSON: %@", self.recipes);
         dispatch_async(dispatch_get_main_queue(), ^{
             
@@ -50,8 +51,9 @@
 }
 
 -(void)loading{
-    if (!self.tableView) {
+    if (self.recipes.count <= 100 && self.recipes.count != 0) {
         [activityIndicator stopAnimating];
+        activityIndicator.hidesWhenStopped = YES;
     }
     else{
         [activityIndicator startAnimating];
@@ -83,7 +85,7 @@
 //    [UIView commitAnimations];
     [cell setBackgroundColor:[UIColor blackColor]];
     
-    [UIView animateWithDuration:0.1
+    [UIView animateWithDuration:0.2
                           delay:0.0
                         options:UIViewAnimationOptionCurveEaseInOut
                      animations:^(void) {
