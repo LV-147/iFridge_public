@@ -48,4 +48,32 @@
     
     return recipe;
 }
+
++ (void)deleteRecipeWithInfo:(NSDictionary *)recipeDict
+                        from:(NSManagedObjectContext *)context{
+    
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Recipe"];
+    request.predicate = [NSPredicate predicateWithFormat:@"label = %@", [recipeDict valueForKey:@"label"]];
+    
+    NSError *error;
+    NSArray *mathes = [context executeFetchRequest:request error:&error];
+    
+    if (!mathes || error || mathes.count > 1) {
+        NSLog(@"matches %@ /n error %@", mathes, error);
+    }else if (mathes.count){
+       Recipe *recipe = mathes.firstObject;
+        [context deleteObject:recipe];
+    }else NSLog(@"Error: no object to delete");
+    [context save:NULL];
+}
+
++ (void)saveRecipe:(Recipe *)recipe inManagedObjectContext:(NSManagedObjectContext *)context{
+    [context insertObject:recipe];
+    [context save:NULL];
+}
+
++ (void)deleteRecipe:(Recipe *)recipe fromManagedObjectContext:(NSManagedObjectContext *)context{
+    [context deleteObject:recipe];
+    [context save:NULL];
+}
 @end
