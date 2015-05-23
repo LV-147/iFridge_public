@@ -4,6 +4,66 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="8Fe-Kd-gvb">
+            <objects>
+                <viewController id="YY1-uh-hCQ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="O1c-1d-YD5"/>
+                        <viewControllerLayoutGuide type="bottom" id="v3U-6l-Cl7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EMk-fV-fp1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z5L-F2-VNv">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="32"/>
+                                <state key="normal" title="Search" backgroundImage="note.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="62" y="160" width="268" height="135"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="GfN-dv-fDj" kind="push" id="wyD-D4-Mwf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Sb-ak-2Yt">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="32"/>
+                                <state key="normal" title="Fridge" backgroundImage="note.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="62" y="443" width="268" height="135"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="BcP-ik-Wyo" kind="push" id="5L0-Pg-GXc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="z5L-F2-VNv"/>
+                                <exclude reference="3Sb-ak-2Yt"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="z5L-F2-VNv"/>
+                                <include reference="3Sb-ak-2Yt"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="rfz-8l-mmn"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qim-7I-mdD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1562.25" y="-2684.5"/>
+        </scene>
         <!--Search View Controller-->
         <scene sceneID="Abh-Pj-b1l">
             <objects>
@@ -84,6 +144,38 @@
             </objects>
             <point key="canvasLocation" x="-612.75" y="-2377.5"/>
         </scene>
+        <!--Fridge-->
+        <scene sceneID="lDU-G2-AoB">
+            <objects>
+                <tableViewController id="BcP-ik-Wyo" customClass="FridgeTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="HiQ-h0-LUc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell Identifier" id="4tO-d3-yNa">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4tO-d3-yNa" id="CjX-d6-O5I">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="BcP-ik-Wyo" id="1yd-kA-pp7"/>
+                            <outlet property="delegate" destination="BcP-ik-Wyo" id="OwF-5f-f1I"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Fridge" id="ZAJ-ra-hBH">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="SRB-D7-Xce">
+                            <connections>
+                                <action selector="addProduct:" destination="BcP-ik-Wyo" id="eZg-VA-mPl"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a3m-3y-7uC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-601.5" y="-3152"/>
+        </scene>
         <!--Dates Table View Controller-->
         <scene sceneID="QUx-yh-B6t">
             <objects>
@@ -98,7 +190,7 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Sfj-Yf-BDz" id="gL2-P1-xEL">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tXS-ZZ-CgZ">
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tXS-ZZ-CgZ">
                                             <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -573,12 +665,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="GfN-dv-fDj" kind="relationship" relationship="rootViewController" id="BnC-I4-lrh"/>
+                        <segue destination="YY1-uh-hCQ" kind="relationship" relationship="rootViewController" id="Aeh-95-wot"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xYM-oz-AIP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1298.25" y="-2377.5"/>
+            <point key="canvasLocation" x="-2375.25" y="-2377.5"/>
         </scene>
     </scenes>
     <resources>

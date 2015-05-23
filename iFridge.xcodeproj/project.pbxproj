@@ -45,6 +45,9 @@
 		35A9D7101B08F1B7005EF9BF /* GooglePlus.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 35A9D70D1B08F1B7005EF9BF /* GooglePlus.bundle */; };
 		35A9D7111B08F1B7005EF9BF /* GooglePlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A9D70E1B08F1B7005EF9BF /* GooglePlus.framework */; };
 		EF56840EE7AA6C558D3C459C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4825B68449CDFCB0DC868FD /* libPods.a */; };
+		F3B7B05F1B10DAC000F9449A /* FridgeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3B7B05E1B10DAC000F9449A /* FridgeTableViewController.m */; };
+		F3B7B0621B10E12A00F9449A /* UIButton+FridgeBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = F3B7B0611B10E12A00F9449A /* UIButton+FridgeBlock.m */; };
+		F3B7B0651B10E20C00F9449A /* UIAlertView+FridgeBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = F3B7B0641B10E20C00F9449A /* UIAlertView+FridgeBlock.m */; };
 		F3BA421B1B0CA7EB00CDD3D9 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3BA421A1B0CA7EB00CDD3D9 /* EventKit.framework */; };
 		F3DFE87B1B0E12DD00E198B3 /* DatesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3DFE87A1B0E12DD00E198B3 /* DatesViewController.m */; };
 		F3DFE87E1B0E245700E198B3 /* DatesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3DFE87D1B0E245700E198B3 /* DatesTableViewController.m */; };
@@ -113,6 +116,12 @@
 		35A9D70E1B08F1B7005EF9BF /* GooglePlus.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GooglePlus.framework; sourceTree = "<group>"; };
 		7B6D530F70A59FB7713BE0D2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		E4825B68449CDFCB0DC868FD /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3B7B05D1B10DAC000F9449A /* FridgeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FridgeTableViewController.h; sourceTree = "<group>"; };
+		F3B7B05E1B10DAC000F9449A /* FridgeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FridgeTableViewController.m; sourceTree = "<group>"; };
+		F3B7B0601B10E12A00F9449A /* UIButton+FridgeBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+FridgeBlock.h"; sourceTree = "<group>"; };
+		F3B7B0611B10E12A00F9449A /* UIButton+FridgeBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+FridgeBlock.m"; sourceTree = "<group>"; };
+		F3B7B0631B10E20C00F9449A /* UIAlertView+FridgeBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+FridgeBlock.h"; sourceTree = "<group>"; };
+		F3B7B0641B10E20C00F9449A /* UIAlertView+FridgeBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+FridgeBlock.m"; sourceTree = "<group>"; };
 		F3BA421A1B0CA7EB00CDD3D9 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		F3DFE8791B0E12DD00E198B3 /* DatesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatesViewController.h; sourceTree = "<group>"; };
 		F3DFE87A1B0E12DD00E198B3 /* DatesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatesViewController.m; sourceTree = "<group>"; };
@@ -221,6 +230,7 @@
 		357A58EF1AFFDF3C0094B0AC /* iFridge */ = {
 			isa = PBXGroup;
 			children = (
+				F3B7B05C1B10DA8F00F9449A /* Fridge */,
 				357A58F41AFFDF3C0094B0AC /* AppDelegate.h */,
 				357A58F51AFFDF3C0094B0AC /* AppDelegate.m */,
 				3559BA7E1B0636DE0040DCB6 /* Main.storyboard */,
@@ -322,6 +332,19 @@
 				F3DFE8831B0E3A2E00E198B3 /* UIAlertView+DatesBlock.m */,
 			);
 			name = Dates;
+			sourceTree = "<group>";
+		};
+		F3B7B05C1B10DA8F00F9449A /* Fridge */ = {
+			isa = PBXGroup;
+			children = (
+				F3B7B05D1B10DAC000F9449A /* FridgeTableViewController.h */,
+				F3B7B05E1B10DAC000F9449A /* FridgeTableViewController.m */,
+				F3B7B0601B10E12A00F9449A /* UIButton+FridgeBlock.h */,
+				F3B7B0611B10E12A00F9449A /* UIButton+FridgeBlock.m */,
+				F3B7B0631B10E20C00F9449A /* UIAlertView+FridgeBlock.h */,
+				F3B7B0641B10E20C00F9449A /* UIAlertView+FridgeBlock.m */,
+			);
+			name = Fridge;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -466,9 +489,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3B7B05F1B10DAC000F9449A /* FridgeTableViewController.m in Sources */,
 				35A4878C1B01F993008F31F3 /* ModeliFridge.xcdatamodeld in Sources */,
 				35A8704B1B061CD8006343B5 /* RecipeWithImage.m in Sources */,
 				F3DFE87B1B0E12DD00E198B3 /* DatesViewController.m in Sources */,
+				F3B7B0621B10E12A00F9449A /* UIButton+FridgeBlock.m in Sources */,
 				F3DFE87E1B0E245700E198B3 /* DatesTableViewController.m in Sources */,
 				357A58F61AFFDF3C0094B0AC /* AppDelegate.m in Sources */,
 				35A4878F1B01FCB6008F31F3 /* Recipes.m in Sources */,
@@ -476,6 +501,7 @@
 				F3DFE8841B0E3A2E00E198B3 /* UIAlertView+DatesBlock.m in Sources */,
 				359709671B04E9D3005064C0 /* RecipesTableViewController.m in Sources */,
 				357A58F31AFFDF3C0094B0AC /* main.m in Sources */,
+				F3B7B0651B10E20C00F9449A /* UIAlertView+FridgeBlock.m in Sources */,
 				F3DFE8811B0E387F00E198B3 /* UIButton+DatesBlock.m in Sources */,
 				35A487921B01FCB6008F31F3 /* Fridge.m in Sources */,
 				3559BA821B064EB30040DCB6 /* SearchViewController.m in Sources */,
